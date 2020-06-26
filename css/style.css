@@ -1,0 +1,57 @@
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /*MAKE THE BODY COVER THE WHOLE PAGE WITH HEIGHT 100vh*/
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /*background: linear-gradient(rgb(106, 215, 230), rgb(47, 114, 122));*/
+    background: linear-gradient(rgb(54, 173, 173), rgb(7, 114, 114));
+    font-family: sans-serif;
+    color: white;
+}
+.location{
+    height: 30vh;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.time-display{
+    font-size: 3em;
+    font-weight: lighter;
+    margin: 0;
+}
+.temperature{
+    flex-direction: column;
+    margin: 0;
+}
+.degree-sec{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.degree-sec span{
+    margin: 10px;
+    font-size: 25px;
+}
+.degree-sec h2{
+    font-size: 40px;
+}
+.temp-description{
+    align-items: center;
+}
+.image-display{
+    width: 30%;
+}
+.temp-degree{
+    margin-left: 10px;
+}
+
+
