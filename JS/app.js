@@ -30,13 +30,6 @@ window.addEventListener("load", ()=>{
                     
                     const weather = data.weather[0].description;
                     tempDesc.textContent = weather.charAt(0).toUpperCase() + weather.slice(1);
-
-                    // const ic = data.weather[0].icon;
-
-                    // const icon = `http://openweathermap.org/img/wn/${ic}@2x.png`;
-
-                    // console.log(icon);
-                    // img.src = icon;
                     
                     const time = new Date(data.dt  * 1000);//mulitply by 1000 to convert from seconds to milliseconds
                     let hours = time.getHours();
