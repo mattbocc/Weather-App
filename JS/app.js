@@ -15,15 +15,16 @@ window.addEventListener("load", ()=>{
             long = position.coords.longitude;
             lat = position.coords.latitude;
 
-            const proxy = "https://cors-anywhere.herokuapp.com/";
-            const key = "7d208166e1f3ab14953cf6af05917ac6";
-            const api = `${proxy}api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`;
+            const key = "1bba9c0964439096ffd93651c242b3ed";
+            const api = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`;
         
             fetch(api)
                 .then(response =>{
                     return response.json();
                 })
                 .then(data =>{
+
+                    console.log(data);
 
                     tempDeg.textContent = Math.round(data.main.temp - 273.15);
                     
