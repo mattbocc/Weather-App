@@ -1,4 +1,6 @@
+/**This cannot work on a local server without a proxy**/
 //when the page loads execute this function
+
 window.addEventListener("load", ()=>{
     let long;
     let lat;
@@ -15,8 +17,9 @@ window.addEventListener("load", ()=>{
             long = position.coords.longitude;
             lat = position.coords.latitude;
 
-            const key = "1bba9c0964439096ffd93651c242b3ed";
+            const key = "4aec08b247371a22399fa9a4807d8429";
             const api = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`;
+
         
             fetch(api)
                 .then(response =>{
@@ -24,7 +27,6 @@ window.addEventListener("load", ()=>{
                 })
                 .then(data =>{
 
-                    console.log(data);
 
                     tempDeg.textContent = Math.round(data.main.temp - 273.15);
                     
@@ -32,7 +34,7 @@ window.addEventListener("load", ()=>{
                     const weather = data.weather[0].description;
                     tempDesc.textContent = weather.charAt(0).toUpperCase() + weather.slice(1);
                     
-                    const time = new Date(data.dt  * 1000);//mulitply by 1000 to convert from seconds to milliseconds
+                    const time = new Date(data.dt * 1000);//mulitply by 1000 to convert from seconds to milliseconds
                     let hours = time.getHours();
                     const minutes = time.getMinutes();
                     
