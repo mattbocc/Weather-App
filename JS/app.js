@@ -1,4 +1,3 @@
-/**This cannot work on a local server without a proxy**/
 //when the page loads execute this function
 
 window.addEventListener("load", ()=>{
@@ -14,23 +13,22 @@ window.addEventListener("load", ()=>{
 
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position =>{
+            
             long = position.coords.longitude;
             lat = position.coords.latitude;
 
-            const key = "4aec08b247371a22399fa9a4807d8429";
-            const api = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`;
+            const key = "7d208166e1f3ab14953cf6af05917ac6";
+            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`;
 
-        
+            
             fetch(api)
                 .then(response =>{
                     return response.json();
                 })
                 .then(data =>{
 
-
                     tempDeg.textContent = Math.round(data.main.temp - 273.15);
-                    
-                    
+                                 
                     const weather = data.weather[0].description;
                     tempDesc.textContent = weather.charAt(0).toUpperCase() + weather.slice(1);
                     
